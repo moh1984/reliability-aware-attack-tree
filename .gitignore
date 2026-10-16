@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.DS_Store
+# NOTE: results/zap_*.json are deliberately NOT ignored. results/PLACE_YOUR_RAW_FILES_HERE.txt
+# asks for the raw ZAP output to be committed so the detection stage is reproducible, and the
+# results/ tree in README section 4 lists them on that basis. An earlier revision excluded
+# them, which contradicted both.
