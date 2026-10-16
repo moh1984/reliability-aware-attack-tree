@@ -1,0 +1,39 @@
+{
+  "priority_formula": "w * Impact * d (paper Table 4)",
+  "rank_biserial_by_w": {
+    "w_low": 1.0,
+    "w_mid": 1.0,
+    "w_high": 1.0
+  },
+  "orderings": {
+    "w_low": [
+      "Stored XSS (offpath)",
+      "CSRF",
+      "Command Injection",
+      "SQL Injection",
+      "Reflected XSS",
+      "Stored XSS (direct)",
+      "File Inclusion"
+    ],
+    "w_mid": [
+      "CSRF",
+      "Stored XSS (offpath)",
+      "Command Injection",
+      "SQL Injection",
+      "Reflected XSS",
+      "Stored XSS (direct)",
+      "File Inclusion"
+    ],
+    "w_high": [
+      "CSRF",
+      "Stored XSS (offpath)",
+      "Command Injection",
+      "SQL Injection",
+      "Reflected XSS",
+      "Stored XSS (direct)",
+      "File Inclusion"
+    ]
+  },
+  "exploitable_above_blocked_all_three": true,
+  "conclusion": "The exploitable-vs-blocked ordering (and thus the rank-biserial result) is unchanged across w_low, w_mid, w_high, confirming the ranking under defense is dominated by the measured d, not by w."
+}

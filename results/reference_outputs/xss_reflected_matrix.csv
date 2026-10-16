@@ -1,0 +1,17 @@
+payload,undef_code,undef_hit,def_code,def_hit
+<script>alert(1)</script>,200,1,403,0
+<script>alert('xss')</script>,200,1,403,0
+<img src=x onerror=alert(1)>,200,1,403,0
+<svg onload=alert(1)>,200,1,403,0
+<body onload=alert(1)>,200,1,403,0
+<iframe src=javascript:alert(1)>,200,1,403,0
+<a href=javascript:alert(1)>x</a>,200,1,403,0
+<input onfocus=alert(1) autofocus>,200,1,403,0
+<select onfocus=alert(1) autofocus>,200,1,403,0
+<marquee onstart=alert(1)>,200,1,403,0
+<details open ontoggle=alert(1)>,200,1,403,0
+<script>alert(String.fromCharCode(88))</script>,200,1,403,0
+<ScRiPt>alert(1)</ScRiPt>,200,1,403,0
+<img src=x onerror=confirm(1)>,200,1,403,0
+javascript:alert(1),200,1,403,0
+<svg><script>alert(1)</script></svg>,200,1,403,0

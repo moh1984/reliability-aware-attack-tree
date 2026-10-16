@@ -1,0 +1,44 @@
+HOW results/ WORKS
+==================
+
+results/reference_outputs/   <- INCLUDED. Reference CSVs with the measured values
+                                from the paper's run, in the exact format the
+                                scripts produce. The package is self-contained
+                                and testable with these: 12_build_master.py falls
+                                back to this folder when results/ holds no run of
+                                your own, and prints which source it used.
+                                11_analyze_stats.py does not read these CSVs at
+                                all - it carries the w / Impact / d values of
+                                paper Table 4 directly, so it reproduces that
+                                table exactly.
+
+results/  (top level)        <- WHERE YOUR OWN RUN LANDS. When you execute the
+                                scripts (03..12), the .ps1/.py files write your
+                                fresh outputs here.
+
+BEFORE ARCHIVING TO ZENODO/GITHUB
+---------------------------------
+1. Run the scripts on your machine (see README section 3).
+2. Your real outputs will appear at results/ top level:
+     sqli_payload_matrix.csv      cmdi_payload_matrix.csv
+     xss_reflected_matrix.csv     xss_stored_matrix.csv
+     xss_stored_crossport.csv     lfi_matrix.csv
+     csrf_matrix.csv              juiceshop_holdout.csv
+     waf_evidence.txt             env_docker_version.txt
+     zap_dvwa_undefended.json     zap_dvwa_defended.json
+     zap_juiceshop_undefended.json zap_juiceshop_defended.json
+     (+ zap_*.html)
+3. If you already have them (folder raap_results_v2), copy them to results/ top level.
+4. The reference_outputs/ folder can stay as a reference, or be removed once your
+   own raw files are in place. EXPECTED_RESULTS.md documents the values to match.
+
+NOTE ON THE zap_*.json FILES
+----------------------------
+These are ALREADY INCLUDED at results/ top level, from the measurement campaign:
+zap_*.json, zap_*.html and zap.yaml. You do not need to supply them.
+The ZAP baseline reports header/config issues; it does not itself flag the
+injection classes (this is discussed in the paper, Sec 4.1 and 5.1) - which is
+exactly why the exploitation stage measures those classes directly.
+A re-run of 02_zap_scan.ps1 OVERWRITES them with your own scan. That is fine and
+intended; `py scripts/16_verify_zap.py` then tells you whether your scan still
+reproduces the published WARN/PASS table.

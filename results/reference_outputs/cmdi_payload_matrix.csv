@@ -1,0 +1,14 @@
+label,ip_param,payload_decoded,undef_code,undef_hit,def_code,def_hit
+amp_echo,127.0.0.1 %26 echo RAAP_CMD_SUCCESS,127.0.0.1 & echo RAAP_CMD_SUCCESS,200,1,403,0
+semi_echo,127.0.0.1%3B echo RAAP_CMD_SUCCESS,127.0.0.1; echo RAAP_CMD_SUCCESS,200,1,403,0
+pipe_echo,127.0.0.1 %7C echo RAAP_CMD_SUCCESS,127.0.0.1 | echo RAAP_CMD_SUCCESS,200,1,403,0
+and_echo,127.0.0.1 %26%26 echo RAAP_CMD_SUCCESS,127.0.0.1 && echo RAAP_CMD_SUCCESS,200,1,403,0
+or_echo,127.0.0.1 %7C%7C echo RAAP_CMD_SUCCESS,127.0.0.1 || echo RAAP_CMD_SUCCESS,200,0,403,0
+amp_id,127.0.0.1 %26 id,127.0.0.1 & id,200,1,200,1
+semi_id,127.0.0.1%3B id,127.0.0.1; id,200,1,200,1
+pipe_id,127.0.0.1 %7C id,127.0.0.1 | id,200,1,200,1
+newline_echo,127.0.0.1%0Aecho RAAP_CMD_SUCCESS,127.0.0.1\necho RAAP_CMD_SUCCESS,200,1,403,0
+newline_id,127.0.0.1%0Aid,127.0.0.1\nid,200,1,200,1
+crlf_id,127.0.0.1%0D%0Aid,127.0.0.1\r\nid,200,1,200,1
+amp_whoami,127.0.0.1 %26 whoami,127.0.0.1 & whoami,200,0,403,0
+amp_uname,127.0.0.1 %26 uname -a,127.0.0.1 & uname -a,200,0,403,0

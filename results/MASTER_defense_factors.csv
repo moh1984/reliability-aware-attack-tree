@@ -1,0 +1,8 @@
+Node,CWE,Mechanism,AccessPath,Payloads,SuccUndef,SuccDef,d
+SQL Injection,CWE-89,direct injection,inbound-inspected,20,18,0,0.0
+Command Injection,CWE-78,direct injection,inbound-inspected,13,10,5,0.5
+Reflected XSS,CWE-79,reflected,inbound-inspected,16,16,0,0.0
+Stored XSS (direct),CWE-79,persisted direct,inbound-inspected,10,10,0,0.0
+File Inclusion,CWE-22,path traversal,inbound-inspected,10,3,0,0.0
+CSRF,CWE-352,logic,not-injection-signature,10,10,10,1.0
+Stored XSS (off-path),CWE-79,persisted off-path,outbound-not-blocked,5,5,5,1.0

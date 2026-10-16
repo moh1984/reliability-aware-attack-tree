@@ -1,0 +1,11 @@
+request,undef_code,undef_hit,def_code,def_hit
+?password_new=Csrf01&password_conf=Csrf01&Change=Change,200,1,200,1
+?password_new=Csrf02&password_conf=Csrf02&Change=Change,200,1,200,1
+?password_new=Csrf03&password_conf=Csrf03&Change=Change,200,1,200,1
+?password_new=Csrf04&password_conf=Csrf04&Change=Change,200,1,200,1
+?password_new=Csrf05&password_conf=Csrf05&Change=Change,200,1,200,1
+?password_new=Csrf06&password_conf=Csrf06&Change=Change,200,1,200,1
+?password_new=Csrf07&password_conf=Csrf07&Change=Change,200,1,200,1
+?password_new=Csrf08&password_conf=Csrf08&Change=Change,200,1,200,1
+?password_new=Csrf09&password_conf=Csrf09&Change=Change,200,1,200,1
+?password_new=Csrf10&password_conf=Csrf10&Change=Change,200,1,200,1

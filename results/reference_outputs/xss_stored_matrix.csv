@@ -1,0 +1,11 @@
+payload,store_code_U,rendered_U,store_code_D,rendered_D
+<script>alert('stored1')</script>,200,1,403,0
+<img src=x onerror=alert('stored2')>,200,1,403,0
+<svg onload=alert('stored3')>,200,1,403,0
+<script>alert(String.fromCharCode(83))</script>,200,1,403,0
+<ScRiPt>alert('stored5')</ScRiPt>,200,1,403,0
+<body onload=alert('stored6')>,200,1,403,0
+<iframe src=javascript:alert('stored7')>,200,1,403,0
+<marquee onstart=alert('stored8')>,200,1,403,0
+<details open ontoggle=alert('stored9')>,200,1,403,0
+<a href=javascript:alert('stored10')>x</a>,200,1,403,0

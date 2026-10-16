@@ -1,0 +1,55 @@
+# =============================================================================
+# Testbed for: Reliability-Aware Attack-Tree Prioritization (mechanism-dependent d)
+# Two conditions per target: UNDEFENDED (direct) and DEFENDED (via ModSecurity CRS)
+#   Bring up:   docker compose up -d
+#   Tear down:  docker compose down -v
+# Endpoint map:  DVWA 8081/9081 | Juice Shop 8082/9082 | WebGoat 8083 (optional)
+# Image refs come from .env so they can be pinned to digests without editing
+# this file; see .env and results/IMAGE_DIGESTS.md.
+# =============================================================================
+services:
+  dvwa:
+    image: ${DVWA_IMAGE:-vulnerables/web-dvwa:latest}
+    container_name: dvwa
+    ports: ["8081:80"]           # UNDEFENDED -> http://localhost:8081
+    networks: [testbed]
+    restart: unless-stopped
+
+  juiceshop:
+    image: ${JUICESHOP_IMAGE:-bkimminich/juice-shop:latest}
+    container_name: juiceshop
+    ports: ["8082:3000"]         # UNDEFENDED -> http://localhost:8082
+    networks: [testbed]
+    restart: unless-stopped
+
+  waf-dvwa:
+    image: ${WAF_IMAGE:-owasp/modsecurity-crs:apache}
+    container_name: waf-dvwa
+    environment:
+      - BACKEND=http://dvwa:80
+      - PARANOIA=1                # CRS paranoia level (1=baseline; raise to 2 for stricter)
+      - ANOMALY_INBOUND=5
+      - ANOMALY_OUTBOUND=4
+      - MODSEC_RULE_ENGINE=On     # On=block; DetectionOnly=log-without-block
+    ports: ["9081:8080"]         # DEFENDED -> http://localhost:9081
+    depends_on: [dvwa]
+    networks: [testbed]
+    restart: unless-stopped
+
+  waf-juiceshop:
+    image: ${WAF_IMAGE:-owasp/modsecurity-crs:apache}
+    container_name: waf-juiceshop
+    environment:
+      - BACKEND=http://juiceshop:3000
+      - PARANOIA=1
+      - ANOMALY_INBOUND=5
+      - ANOMALY_OUTBOUND=4
+      - MODSEC_RULE_ENGINE=On
+    ports: ["9082:8080"]         # DEFENDED -> http://localhost:9082
+    depends_on: [juiceshop]
+    networks: [testbed]
+    restart: unless-stopped
+
+networks:
+  testbed:
+    driver: bridge

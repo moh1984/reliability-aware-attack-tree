@@ -1,0 +1,11 @@
+payload,undef_code,undef_hit,def_code,def_hit
+/etc/passwd,200,1,403,0
+../../../../etc/passwd,200,1,403,0
+....//....//....//etc/passwd,200,0,200,0
+..%2f..%2f..%2f..%2fetc%2fpasswd,200,0,200,0
+/etc/passwd%00,200,0,200,0
+../../../../../../etc/passwd,200,1,403,0
+..\..\..\..\etc\passwd,200,0,200,0
+%2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fpasswd,200,0,200,0
+php://filter/convert.base64-encode/resource=/etc/passwd,200,0,200,0
+file:///etc/passwd,200,0,200,0

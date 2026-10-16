@@ -1,0 +1,18 @@
+{
+  "scope": "in-sample descriptive (not predictive)",
+  "priority_formula": "w*Impact*d (matches paper Table 4)",
+  "ours_rank_biserial": 1.0,
+  "ours_CI": [
+    1.0,
+    1.0
+  ],
+  "impact_only_rank_biserial": 0.16666666666666666,
+  "impact_only_CI": [
+    -0.8,
+    1.0
+  ],
+  "ours_spearman": 0.9555330859059091,
+  "impact_only_spearman": 0.14978617237881953,
+  "baseline_note": "the baseline is the ordinal severity weight used alone, not an official CVSS score",
+  "n": 7
+}

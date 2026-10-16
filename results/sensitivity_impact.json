@@ -1,0 +1,60 @@
+{
+  "priority_formula": "w * Impact * d (paper Table 4)",
+  "perturbation": "+/-30% on every Impact value",
+  "draws": 5000,
+  "seed": 20250901,
+  "baseline": {
+    "priorities_under_defense": {
+      "SQL Injection": 0.0,
+      "Command Injection": 0.4275,
+      "Reflected XSS": 0.0,
+      "Stored XSS (direct)": 0.0,
+      "Stored XSS (offpath)": 0.48,
+      "File Inclusion": 0.0,
+      "CSRF": 0.4875
+    },
+    "rank_biserial": 1.0,
+    "survivor_order": [
+      "CSRF",
+      "Stored XSS (offpath)",
+      "Command Injection"
+    ]
+  },
+  "claim_A_separation_invariant_by_construction": {
+    "rank_biserial_corners": {
+      "impact_low": 1.0,
+      "impact_mid": 1.0,
+      "impact_high": 1.0
+    },
+    "rank_biserial_values_over_random_draws": [
+      1.0
+    ],
+    "note": "Blocked nodes score exactly 0 because d = 0, so any strictly positive Impact preserves the separation. This is an algebraic fact, not an empirical finding; the draws only confirm it."
+  },
+  "claim_B_survivor_order_is_sensitive": {
+    "closest_pairs_percent_gap": [
+      [
+        "CSRF",
+        "Stored XSS (offpath)",
+        1.56
+      ],
+      [
+        "Stored XSS (offpath)",
+        "Command Injection",
+        12.28
+      ]
+    ],
+    "top_rank_frequency": {
+      "Command Injection": 418,
+      "Stored XSS (offpath)": 2139,
+      "CSRF": 2443
+    },
+    "top_rank_share": {
+      "Command Injection": 0.084,
+      "Stored XSS (offpath)": 0.428,
+      "CSRF": 0.489
+    },
+    "distinct_survivor_orderings": 6,
+    "note": "The rank order among surviving nodes is not robust. The paper therefore claims only WHICH nodes survive under defense, and treats their relative order as indicative."
+  }
+}

@@ -1,0 +1,12 @@
+=== WAF EVIDENCE on defended port 9081 (reference) ===
+
+--- SQLi (CWE-89) direct injection ---
+HTTP/1.1 403 Forbidden
+
+--- CSRF (CWE-352) logic request ---
+HTTP/1.1 200 OK
+Password Changed: YES (WAF allowed)
+
+NOTE: This is a REFERENCE capture reflecting the measured run.
+Replace with your own live capture (09_waf_evidence.ps1). For definitive
+attribution, enable the ModSecurity audit log and include matched rule IDs.

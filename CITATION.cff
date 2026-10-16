@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+title: "A Reliability-Aware Attack-Tree Framework for Defense-Sensitive Vulnerability Prioritization — Replication Package"
+message: "If you use this package, please cite the accompanying paper."
+type: software
+authors:
+  - family-names: "Baklizi"
+    given-names: "Mahmoud"
+    affiliation: "Department of Computer Science, Faculty of Information Technology, University of Petra, Amman, Jordan"
+  - family-names: "Alkhazaleh"
+    given-names: "Mohammad"
+    affiliation: "Department of Computer Science, Faculty of Information Technology, Isra University, Amman, Jordan"
+    email: "m.alkhazaleh@iu.edu.jo"
+  - family-names: "Alzghoul"
+    given-names: "Musab"
+    affiliation: "Department of Computer Science, Faculty of Information Technology, Isra University, Amman, Jordan"
+  - family-names: "Alibrahim"
+    given-names: "Ali"
+    affiliation: "Department of Computer Information Systems, Faculty of Information Technology, Isra University, Amman, Jordan"
+  - family-names: "Al Sardy"
+    given-names: "Loui"
+    affiliation: "Department of Computer Science, Friedrich-Alexander University Erlangen-Nürnberg (FAU), Erlangen, Germany"
+version: "1.0.0"
+date-released: "2026-10-16"
+license: MIT
+keywords:
+  - attack trees
+  - defense factor
+  - DVWA
+  - noisy-OR
+  - OWASP Juice Shop
+  - scanner reliability
+  - vulnerability prioritization
+  - web-application firewall

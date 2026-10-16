@@ -1,0 +1,6 @@
+test,undef_code,def_code,consistent_with_waf_intervention
+SQLi login bypass,500,400,yes (status transition)
+SQLi login tautology,500,400,yes (status transition)
+SQLi union,500,400,yes (status transition)
+XSS search reflected,200,403,yes (status transition)
+Path traversal encoded,403,404,no
